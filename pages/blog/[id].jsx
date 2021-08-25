@@ -39,3 +39,12 @@ export const getServerSideProps = async (ctx)=>{
     } ;
 };
 
+export const getStaticPaths = async ()=>{
+    const res = await client.get({ endpoint:"blog" });
+    const paths = res.contents.map(ele=>ele.id);
+    return {
+        paths: paths,
+        fallback: false,
+    };
+};
+
