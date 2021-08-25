@@ -1,0 +1,37 @@
+
+@use "util" ;
+
+.skill{
+    ul.grid{
+        margin: 5px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0.75rem;
+        li{
+            // border: solid util.$main-color-2 3px;
+            padding: 0.8rem;
+            margin: 0;
+            border-radius: 1rem;
+            background: util.$main-color-3;
+            color: white;
+            b{
+                color: util.$main-color-2;
+
+            }
+        }
+        @include util.spQuery{
+            grid-template-columns: repeat(1,1fr);
+            margin: 0;
+            li{
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+                &:nth-child(2n){
+                    background: white;
+                    color: util.$main-color-3;
+                }
+            }
+        }
+    }
+}
+

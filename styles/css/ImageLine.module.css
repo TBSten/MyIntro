@@ -1,0 +1,8 @@
+.imageLine {
+  padding: 0 1rem;
+}
+.imageLine img {
+  max-width: max(200px, 30%);
+  z-index: 0;
+}
+/*# sourceMappingURL=ImageLine.module.css.map */

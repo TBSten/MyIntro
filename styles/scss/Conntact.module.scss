@@ -1,0 +1,58 @@
+@use "util" ;
+
+.conntact{
+
+    ul.conntacts{
+        li{
+            margin: auto 1rem;
+            margin-bottom: 30vh;
+            .conntactImageDetail{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 0.8rem;
+                .imgContainer{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .img{
+                        // width:30vmin;
+                        // height: 30vmin;
+                        width: 100%;
+                        max-width: 100%;
+                        height: auto;
+                    }
+                    @include util.spQuery{
+                        margin: 10vh 10vw;
+                    }
+                }
+                @include util.spQuery{
+                    grid-template-columns: 1fr;
+                    .detailContainer{
+                        @include util.spQuery{
+                            grid-row: 1;
+                        }
+                    }
+                }
+            }
+            // margin: 1rem;
+            &:nth-child(2n){
+                .conntactImageDetail{
+                    grid-template-columns: 2fr 1fr;
+                    .detailContainer{
+                        grid-row:1;
+                    }
+                    @include util.spQuery{
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+            @include util.spQuery{
+                margin-bottom: 10vh;
+            }
+        }
+        img{
+            margin: 10% 0;
+        }
+    }
+}
+

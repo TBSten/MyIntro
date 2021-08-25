@@ -1,0 +1,10 @@
+.top * {
+  text-align: center;
+}
+.top main .title {
+  margin: 1rem 0;
+}
+.top main .circle {
+  border-radius: 50%;
+}
+/*# sourceMappingURL=Top.module.css.map */

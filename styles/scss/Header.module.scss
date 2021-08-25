@@ -1,0 +1,131 @@
+@use "util";
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding:1.5rem;
+    background-color: white;
+    .pcMenu{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        li{
+            position: relative;
+            top:10px;
+            margin:0;
+            margin-left: 1.5rem;
+            font-size: 1.2em;
+            transition: 0.3s;
+            border-bottom: 2px solid rgba(0, 0, 0, 0);
+            &:hover{
+                opacity: 0.3;
+                transition: 0.3s;
+                cursor: pointer;
+                border-bottom: 2px solid util.$main-color-1;
+            }
+        }
+        @include util.spQuery{
+            display: none;
+        }
+    }
+    .spMenu{
+        display:none;
+
+        @include util.spQuery{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .menuBtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.2rem;
+                height: 1.2rem;
+                transition: 0.3s;
+                &:hover{
+                    opacity: 0.5;
+                    transform: scale(2.5);
+                    transform-origin: center center;
+                    transition: 0.3s;
+                    cursor: pointer;
+
+                }
+            }
+            ul.menu{
+                transition: 0.3s;
+                opacity: 0;
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                &.open{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    list-style-type: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    padding-top: 10%;
+                    background: rgb(255, 255, 255);
+                    border-radius: 10px;
+                    opacity: 0.95;
+                    z-index: 1000;
+                    transition: 0.2s;
+                
+                }
+                li{
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 2.5em;
+                    transition: 0.3s;
+                    width: 100%;
+                    &:hover{
+                        background: util.$main-color-1;
+                        color: white;
+                        transition: 0.3s;
+                        a{
+                            color: white;
+                            cursor: pointer;
+
+                        }
+                    }
+            a:hover{
+                color:white;
+            }
+                }
+                .cancel{
+                    margin: 5vh 0;
+                    transition: 0.3s;
+                    &:hover{
+                        opacity: 0.5;
+                        transition: 0.3s;
+                        transform: scale(2.5);
+                        transform-origin: center center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .icon{
+        border-radius: 50%;
+        transition: 0.3s;
+        
+        &:hover{
+            opacity: 0.3;
+            transition: 0.3s;
+        }
+    }
+    @include util.spQuery{
+        align-items: center;
+    }
+    
+}
+
+
