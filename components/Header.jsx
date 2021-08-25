@@ -11,6 +11,7 @@ export const links = [
     {text:"Top", path:"/"},
     {text:"About", path:"/about"},
     {text:"Skill", path:"/skill"},
+    {text:"Blog", path:"/blog"},
     {text:"Conntact", path:"/conntact"},
 ] ;
 
@@ -23,6 +24,7 @@ export default function Header() {
                 <Link href="/">
                     <a>
                         <Image 
+                            layout="fixed"
                             src={icon} 
                             alt="image" 
                             className={styles.icon}

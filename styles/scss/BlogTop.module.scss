@@ -1,0 +1,25 @@
+
+@use "util";
+
+.blog{
+    ul.veryImportants,
+    ul.importants{
+        text-align: left;
+        padding: 2rem;
+        @include util.spQuery{
+            padding:0;
+        }
+    }
+    ul.articles{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+        @include util.spQuery{
+            grid-template-columns: 1fr;
+        }
+    }
+    li{
+        margin: 0;
+    }
+}
+

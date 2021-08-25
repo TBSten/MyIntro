@@ -1,0 +1,53 @@
+
+@use "util" ;
+
+.img{
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    @include util.spQuery{
+        border-radius: 0;
+    }
+}
+.texts{
+    padding: 0.7rem;
+}
+
+@mixin article {
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0 1rem;
+    &:hover{
+        transition: 0.2s;
+        background: rgb(233, 233, 233);
+    }
+    @content ;
+}
+
+.list{
+    @include article ;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-items: center;
+    align-items: center;
+    @include util.spQuery{
+        grid-template-columns: 1fr; 
+        padding: 0;
+    }
+}
+
+.grid{
+    @include article ;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: center;
+    .texts{
+        width: 100%;
+    }
+    h3{
+        margin: 0;
+    }
+}
+

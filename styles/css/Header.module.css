@@ -12,6 +12,8 @@
   background-color: white;
 }
 .header .headerLeft {
+  width: auto;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,6 +31,10 @@
   .header .headerLeft {
     display: block;
   }
+}
+.header .headerLeft a {
+  width: auto;
+  height: auto;
 }
 .header .pcMenu {
   display: -webkit-box;

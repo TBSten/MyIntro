@@ -6,6 +6,8 @@
     padding:1.5rem;
     background-color: white;
     .headerLeft{
+        width: auto;
+        height:auto ;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -14,6 +16,10 @@
         }
         @include util.spQuery{
             display: block;
+        }
+        a{
+            width: auto;
+            height: auto;
         }
     }
     .pcMenu{
@@ -60,8 +66,8 @@
                     transform-origin: center center;
                     transition: 0.3s;
                     cursor: pointer;
-
                 }
+
             }
             ul.menu{
                 transition: 0.3s;

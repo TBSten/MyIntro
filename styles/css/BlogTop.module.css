@@ -1,0 +1,25 @@
+.blog ul.veryImportants,
+.blog ul.importants {
+  text-align: left;
+  padding: 2rem;
+}
+@media only screen and (max-width: 560px) {
+  .blog ul.veryImportants,
+.blog ul.importants {
+    padding: 0;
+  }
+}
+.blog ul.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media only screen and (max-width: 560px) {
+  .blog ul.articles {
+    grid-template-columns: 1fr;
+  }
+}
+.blog li {
+  margin: 0;
+}
+/*# sourceMappingURL=BlogTop.module.css.map */

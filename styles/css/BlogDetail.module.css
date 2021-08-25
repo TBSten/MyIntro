@@ -1,0 +1,19 @@
+.blogDetails {
+  text-align: left;
+}
+.blogDetails .blogContent {
+  text-align: left;
+}
+.blogDetails .blogContent ul,
+.blogDetails .blogContent ol {
+  margin: 0 10px;
+  padding: 0.7rem;
+  padding-left: 2em;
+  border-radius: 10px;
+  border: gray 3px solid;
+  background-color: #e8e8e8;
+}
+.blogDetails img {
+  width: 40%;
+}
+/*# sourceMappingURL=BlogDetail.module.css.map */

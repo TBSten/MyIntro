@@ -1,0 +1,22 @@
+@use "util";
+
+.blogDetails{
+    text-align: left;
+    .blogContent{
+        text-align: left;
+        ul,
+        ol{
+            margin: 0 10px;
+            padding: 0.7rem;
+            padding-left: 2em;
+            border-radius: 10px;
+            border: gray 3px solid;
+            background-color: util.$back-color;
+        }
+    
+    }
+    img{
+        width: 40%;
+    }
+}
+
