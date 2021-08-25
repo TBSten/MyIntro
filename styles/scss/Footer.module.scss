@@ -1,0 +1,45 @@
+@use "util" ;
+
+.footer{
+    background-color: util.$back-color;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem 1rem 20vh 1rem;
+    .title{
+        font-size: 3rem;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            transform: scale(1.2);
+            color: black;
+            &:hover{
+                color: util.$main-color-1;
+            }
+        }
+    }
+    ul.menu{
+        list-style: none;
+        li{
+            text-align: right;
+            a{
+                color: black;
+                text-decoration: none;
+                &:hover{
+                    color: util.$main-color-1;
+                    cursor: pointer;
+                    &::after{
+                        content:"→";
+                    }
+                }
+            }
+            @include util.spQuery{
+                text-align: left;
+                margin-left:1rem;
+            }
+        }
+    }
+    @include util.spQuery{
+        grid-template-columns: 1fr;
+    }
+}
+

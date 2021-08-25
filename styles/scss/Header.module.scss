@@ -5,6 +5,17 @@
     align-items: flex-end;
     padding:1.5rem;
     background-color: white;
+    .headerLeft{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            margin-left: 0.5rem;
+        }
+        @include util.spQuery{
+            display: block;
+        }
+    }
     .pcMenu{
         display: flex;
         flex-direction: row;

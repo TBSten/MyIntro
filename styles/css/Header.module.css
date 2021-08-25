@@ -11,6 +11,25 @@
   padding: 1.5rem;
   background-color: white;
 }
+.header .headerLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .headerLeft div {
+  margin-left: 0.5rem;
+}
+@media only screen and (max-width: 560px) {
+  .header .headerLeft {
+    display: block;
+  }
+}
 .header .pcMenu {
   display: -webkit-box;
   display: -ms-flexbox;

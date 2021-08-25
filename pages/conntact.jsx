@@ -88,10 +88,11 @@ export default function Conntact(){
                                         <SubTitle 
                                             h2={ele.name}
                                             h5={ele.details}/>
-                                    <LinkButton 
-                                        href={ele.href} 
-                                        target="_blank"
-                                        children={[ele.name," へ"]}/>
+                                        <LinkButton 
+                                            href={ele.href} 
+                                            target="_blank">
+                                                {[ele.name," へ"]}
+                                        </LinkButton>
 
                                     </div>
                                 </div>
