@@ -28,7 +28,7 @@ export default function Blog({blog}){
                     {veryImportants.length > 0 ? 
                         <ul className={styles.veryImportants}>
                             {veryImportants.map(ele=> (
-                                <li className={styles.article}>
+                                <li className={styles.article} key={ele.id}>
                                     <Article type="list" content={ele} />
                                 </li>
                             ))}
@@ -37,7 +37,7 @@ export default function Blog({blog}){
                     {importants.length > 0 ? 
                         <ul className={styles.importants}>
                             {importants.map(ele=> (
-                                <li className={styles.article}>
+                                <li className={styles.article} key={ele.id}>
                                     <Article type="list" content={ele} />
                                 </li>
                             ))}
