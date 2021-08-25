@@ -6,7 +6,7 @@ import Head from "next/head" ;
 function MyApp({ Component, pageProps }) {
   return ( 
     <>
-      <Head>
+      {/* <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-config" content="/favicons/browserconfig.xml" /> //Windows8/10のスタート画面のピン留め画像に対応したい場合
         <meta name="theme-color" content="#ffffff" />
-      </Head>
+      </Head> */}
       <Component {...pageProps} /> 
     </>
   );
