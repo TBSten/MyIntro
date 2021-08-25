@@ -41,7 +41,9 @@ export const getStaticProps = async (ctx)=>{
 
 export const getStaticPaths = async ()=>{
     const res = await client.get({ endpoint:"blog" });
-    const paths = res.contents.map(ele=> { params:{id:ele.id} } );
+    const paths = posts.map(post => ({
+        params: { id: ele.id }
+      }));
     return {
         paths: paths,
         fallback: false,
