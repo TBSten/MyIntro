@@ -29,8 +29,8 @@ export default function BlogDetail({data}){
     ) ;
 }
 
-export const getStaticProps = async (ctx)=>{
-    const id = ctx.query.id ;
+export const getStaticProps = async ({params})=>{
+    const id = params.id ;
     const res = await client.get({ endpoint:"blog/"+id });
     return {
         props: {
