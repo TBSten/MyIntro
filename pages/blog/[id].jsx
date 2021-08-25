@@ -29,7 +29,7 @@ export default function BlogDetail({data}){
     ) ;
 }
 
-export const getServerSideProps = async (ctx)=>{
+export const getStaticProps = async (ctx)=>{
     const id = ctx.query.id ;
     const res = await client.get({ endpoint:"blog/"+id });
     return {
@@ -41,7 +41,7 @@ export const getServerSideProps = async (ctx)=>{
 
 export const getStaticPaths = async ()=>{
     const res = await client.get({ endpoint:"blog" });
-    const paths = res.contents.map(ele=>ele.id);
+    const paths = res.contents.map(ele=> { params:{id:ele.id} } );
     return {
         paths: paths,
         fallback: false,
