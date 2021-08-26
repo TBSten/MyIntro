@@ -14,9 +14,31 @@
             border-radius: 1rem;
             background: util.$main-color-3;
             color: white;
+            transition: 0.5s;
+            &:hover{
+                transition: 0.5s;
+                transform:scale(1.01);
+            }
             b{
                 color: util.$main-color-2;
-
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+            h3{
+                position: relative;
+                text-align: left;
+            }
+            h3:after{
+                content:" ";
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 80%;
+                height: 100%;
+                border-bottom: util.$back-color solid 2px;
             }
         }
         @include util.spQuery{

@@ -10,11 +10,37 @@
   border-radius: 1rem;
   background: #49516f;
   color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.skill ul.grid li:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 .skill ul.grid li b {
   color: #4c9f70;
 }
-@media only screen and (max-width: 500px) {
+.skill ul.grid li img {
+  width: 100%;
+  height: auto;
+}
+.skill ul.grid li h3 {
+  position: relative;
+  text-align: left;
+}
+.skill ul.grid li h3:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  border-bottom: #e8e8e8 solid 2px;
+}
+@media only screen and (max-width: 560px) {
   .skill ul.grid {
     grid-template-columns: repeat(1, 1fr);
     margin: 0;

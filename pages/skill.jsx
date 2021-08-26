@@ -1,7 +1,9 @@
+import Link from "next/link" ;
 
 import BaseLayout from "../components/BaseLayout";
 import Section from "../components/Section";
 import SubTitle from "../components/SubTitle";
+import LinkButton from "../components/LinkButton";
 
 import styles from "../styles/css/Skill.module.css" ;
 
@@ -41,12 +43,34 @@ const Qua = [
     "応用情報技術者試験",
 ] ;
 
-export default function Skill({data}){
+export default function Skill({works}){
     return (
         <BaseLayout className={styles.skill}>
             <Section>
                 <h1>SKILL</h1>
-                <h4>プログラミング言語や資格</h4>
+                <h4>実績・プログラミング言語や資格</h4>
+            </Section>
+
+            <Section>
+                <SubTitle
+                    h2="Works"
+                    h5="実績・作品"/>
+                <ul className={styles.grid}>
+                    {
+                        works.map(ele=>(
+                            <li key={ele.id}>
+                                <h3>{ele.name}</h3>
+                                <img src={ele.image.url} />
+                                <div dangerouslySetInnerHTML={{__html: ele.detail}}/>
+                                {ele.link?
+                                    <LinkButton href={ele.link}>
+                                        みてみる
+                                    </LinkButton>
+                                :""}
+                            </li>
+                        ))
+                    }
+                </ul>
             </Section>
 
             <Section>
@@ -96,11 +120,11 @@ export default function Skill({data}){
     ) ;
 }
 
-// export const getStaticProps = async () => {
-//     console.log(fetch);
-//     return {
-//       props: {
-//       },
-//     };
-// };
-
+export const getStaticProps = async ()=>{
+    const data = await client.get({ endpoint:"works" });
+    return {
+        props: {
+            works: data.contents,
+        },
+    } ;
+};
