@@ -15,7 +15,6 @@ export default function Blog({blog}){
     ));
     const veryImportants = blogs.filter((art)=>(art.importance[0] === "最重要"))
     const importants = blogs.filter((art)=>(art.importance[0] === "重要"))
-    console.log(veryImportants, importants);
     return (
         <BaseLayout className={styles.blog}>
             <Section>
@@ -67,5 +66,6 @@ export const getStaticProps = async ()=>{
         props: {
             blog: data.contents,
         },
+        revalidate : 60*60*12,  //12時間に1回ISR
     } ;
 };

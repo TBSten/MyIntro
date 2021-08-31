@@ -10,13 +10,49 @@
             padding: 0.7rem;
             padding-left: 2em;
             border-radius: 10px;
-            border: gray 3px solid;
+            border: gray 1px solid;
             background-color: util.$back-color;
         }
-    
     }
     img{
         width: 40%;
+    }
+    .grid{
+        max-width: 1200px;
+        margin: 0 10px;
+        display: grid;
+        grid-template-columns: 1fr max(200px,25%);
+        gap: 1rem;
+        align-items: start;
+        aside{
+            border-radius: 1rem;
+            text-align: left;
+            padding: 0.5rem 1rem;
+            .sideItem{
+                margin-bottom: 10px;
+                border-radius: 10px;
+                *{
+                    margin: 0;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color:black;
+                }
+                h6{
+                    border-bottom: solid 2px util.$main-color-1;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+        @include util.spQuery{
+            grid-template-columns: 1fr ;
+            margin: 0;
+        }
     }
 }
 

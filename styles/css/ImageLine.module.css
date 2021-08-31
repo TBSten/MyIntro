@@ -5,4 +5,8 @@
   max-width: max(200px, 30%);
   z-index: 0;
 }
+.imageLine .image {
+  max-width: max(200px, 30%);
+  z-index: 0;
+}
 /*# sourceMappingURL=ImageLine.module.css.map */

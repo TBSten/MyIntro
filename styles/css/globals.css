@@ -7,11 +7,11 @@ body {
 
 body::before {
   content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
   z-index: -1;
   background-image: url("/img/TBStenicon.png");
   background-position: center;
@@ -19,7 +19,7 @@ body::before {
   background-attachment: fixed;
   -webkit-filter: blur(10px);
           filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.123);
+  background-color: rgba(0, 0, 0, 0.274);
   background-blend-mode: color;
 }
 

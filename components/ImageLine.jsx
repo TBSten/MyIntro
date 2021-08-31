@@ -3,18 +3,9 @@ import styles from "../styles/css/ImageLine.module.css" ;
 console.log(styles.imageLine);
 export default function ImageLine(props){
     return (
-        // <div className={styles.imageLine}>
-        //     <Image {...props}/>
-        // </div>
         <div className={styles.imageLine}>
-            <img src={props.src.src} />
+            {/* <img src={props.src.src} /> */}
+            <Image src={props.src} className={styles.image}/>
         </div>
-        // <div className={styles.imageLine}>
-        //     <Image 
-        //         src={props.src.src} 
-        //         width={100} 
-        //         height={}
-        //         layout="responsive"/>
-        // </div>
     ) ;
 }

@@ -7,6 +7,8 @@ export default function Section(props){
         imgUrl,
         children,
         fade=true,
+        autoWidth=true,
+        className="",
         ...other
     } = props ;
     const childRef = useRef(null);
@@ -36,14 +38,18 @@ export default function Section(props){
     if(isOpen){
         childClasses.push(moduleStyle.open);
     }
-    const style = imgUrl?{
-        backgroundImage: `url("${imgUrl}")`,
-    } :
-    {};
+    // const style = imgUrl?{
+    //     backgroundImage: `url("${imgUrl}")`,
+    // } :
+    // {};
+    const style = {} ;
+    if(imgUrl) style["backgroundImage"] = `url("${imgUrl}")` ;
     // console.log("childClasses :",childClasses.join(" "));
+    const childStyle = {} ;
+    if(autoWidth) childStyle["width"] = "min(100%, 800px)" ;
     return (
-        <section ref={childRef} className={moduleStyle.section} style={style} {...other}>
-            <div className={childClasses.join(" ")}>
+        <section ref={childRef} className={moduleStyle.section+" "+className} style={style} {...other}>
+            <div className={childClasses.join(" ")} style={childStyle}>
                 {children}
             </div>
         </section>

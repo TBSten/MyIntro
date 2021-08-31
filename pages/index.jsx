@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 import img01 from '../public/img/TBStenicon.png'
 import img02 from '../public/img/Programming-rafiki.png'
@@ -8,6 +9,7 @@ import styles from "../styles/css/Top.module.css" ;
 import Section from "../components/Section";
 import BaseLayout from '../components/BaseLayout';
 import SubTitle from '../components/SubTitle';
+import LinkButton from '../components/LinkButton';
 
 export default function Top() {
   return (
@@ -42,6 +44,7 @@ export default function Top() {
           を趣味でしたことがあります！
           その他必要に応じていろいろな技術に挑戦中！
         </p>
+        <LinkButton href="/skill">MORE</LinkButton>
       </Section>
 
       <Section>
@@ -57,6 +60,9 @@ export default function Top() {
         そんなプログラミング食堂の運営・管理を行っています。
         </p>
         <Image src={img03} alt="image"/>
+        <div>
+          <LinkButton href="/about">MORE</LinkButton>
+        </div>
       </Section>
     </BaseLayout>
 

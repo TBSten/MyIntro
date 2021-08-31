@@ -11,7 +11,7 @@
     text-align: center;
 
     .child{
-        width: min(100%, 800px);
+        // width: min(100%, 800px);
         &.fade{
             opacity: 0;
             transform: translateY(100px);
