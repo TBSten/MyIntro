@@ -66,6 +66,6 @@ export const getStaticProps = async ()=>{
         props: {
             blog: data.contents,
         },
-        revalidate : 60*60*12,  //12時間に1回ISR
+        revalidate : 60,
     } ;
 };
