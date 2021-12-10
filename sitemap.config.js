@@ -3,5 +3,6 @@ module.exports = {
     generateRobotsTxt: true,
     sitemapSize: 7000,
     outDir: './public',
+    priority:undefined,
 };
 
