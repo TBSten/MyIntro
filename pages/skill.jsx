@@ -1,49 +1,49 @@
-import Link from "next/link" ;
+import Link from "next/link";
 
 import BaseLayout from "../components/BaseLayout";
 import Section from "../components/Section";
 import SubTitle from "../components/SubTitle";
 import LinkButton from "../components/LinkButton";
 
-import styles from "../styles/css/Skill.module.css" ;
+import styles from "../styles/css/Skill.module.css";
 
-import {client} from "../libs/client" ;
+import { client } from "../libs/client";
 
 const lanFra = [
     {
-        text:"Java", 
-        details:<>基本文法や標準ライブラリ, GUIフレームワークである<b>Swing,JavaFx</b></>,
-        canDo:"Windowsアプリケーション",
+        text: "Java",
+        details: <>基本文法や標準ライブラリ, GUIフレームワークである<b>Swing,JavaFx</b></>,
+        canDo: "Windowsアプリケーション",
         /* imgPathなど */
     },
     {
-        text:"Web(フロントエンド)", 
-        details:<><b>HTML5/CSS3, JavaScript, React, NextJS</b>など。Firebaseを用いたWebアプリ開発</>,
-        canDo:"サイト制作, ウェブアプリ",
+        text: "Web(フロントエンド)",
+        details: <><b>HTML5/CSS3, JavaScript, React, NextJS</b>など。Firebaseを用いたWebアプリ開発</>,
+        canDo: "サイト制作, ウェブアプリ",
         /* imgPathなど */
     },
     {
-        text:"ツール・サービス", 
-        details:(
+        text: "ツール・サービス",
+        details: (
             <><b>Git</b>, <b>Excel</b>を学習済み（開発時よく使っています）,
-            Firebaseの各種サービスなど幅広く対応できると思います </>) ,
+                Firebaseの各種サービスなど幅広く対応できると思います </>),
         /* imgPathなど */
     },
     {
-        text:"その他", 
-        details:<><b>PHP</b>をちょっと触ったことあります。
+        text: "その他",
+        details: <><b>PHP</b>をちょっと触ったことあります。
             一時期<b>GAS</b>(GoogleAppsScript)にハマっていたので、簡単な<b>LINE BOT</b>も作成できます。</>,
-        canDo:"LINEチャットBOTなどの作成",
+        canDo: "LINEチャットBOTなどの作成",
         /* imgPathなど */
     },
-] ;
+];
 
 const Qua = [
     "基本情報技術者試験",
     "応用情報技術者試験",
-] ;
+];
 
-export default function Skill({works}){
+export default function Skill({ works }) {
     return (
         <BaseLayout className={styles.skill}>
             <Section>
@@ -54,19 +54,19 @@ export default function Skill({works}){
             <Section>
                 <SubTitle
                     h2="Works"
-                    h5="実績・作品"/>
+                    h5="実績・作品" />
                 <ul className={styles.grid}>
                     {
-                        works.map(ele=>(
+                        works.map(ele => (
                             <li key={ele.id}>
                                 <h3>{ele.name}</h3>
                                 <img src={ele.image.url} />
-                                <div dangerouslySetInnerHTML={{__html: ele.detail}}/>
-                                {ele.link?
+                                <div dangerouslySetInnerHTML={{ __html: ele.detail }} />
+                                {ele.link ?
                                     <LinkButton href={ele.link}>
                                         みてみる
                                     </LinkButton>
-                                :""}
+                                    : ""}
                             </li>
                         ))
                     }
@@ -74,22 +74,22 @@ export default function Skill({works}){
             </Section>
 
             <Section>
-                <SubTitle 
+                <SubTitle
                     h2="Language / Framework"
-                    h5="プログラミング言語・フレームワーク"/>
+                    h5="プログラミング言語・フレームワーク" />
                 {/* ここにlanFraをmapする */}
                 {/* GridLayoutなどでレイアウトする */}
                 <ul className={styles.grid}>
                     {
-                        lanFra.map((ele, idx)=>(
+                        lanFra.map((ele, idx) => (
                             <li key={idx}>
                                 <h3> {ele.text} </h3>
                                 <p>
                                     {ele.details}
                                 </p>
-                                {ele.canDo ? 
+                                {ele.canDo ?
                                     <>
-                                        <hr/>
+                                        <hr />
                                         {ele.canDo}
                                     </>
                                     :
@@ -103,11 +103,11 @@ export default function Skill({works}){
             <Section>
                 <SubTitle
                     h2="Qualification"
-                    h5="資格"/>
+                    h5="資格" />
                 {/* ここにQuaをmapする */}
                 <ul className={styles.grid}>
                     {
-                        Qua.map((ele, idx)=>(
+                        Qua.map((ele, idx) => (
                             <li key={idx}>
                                 {ele}
                             </li>
@@ -117,14 +117,15 @@ export default function Skill({works}){
             </Section>
 
         </BaseLayout>
-    ) ;
+    );
 }
 
-export const getStaticProps = async ()=>{
-    const data = await client.get({ endpoint:"works" });
+export const getStaticProps = async () => {
+    const data = await client.get({ endpoint: "works" });
     return {
         props: {
             works: data.contents,
         },
-    } ;
+        revalidate: 60,
+    };
 };
